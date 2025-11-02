@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # Colors for output
 RED='\033[0;31m'
@@ -60,8 +60,8 @@ extract_links() {
     local base_url="$2"
     local domain="$3"
     
-    # Extract all href links, remove duplicates
-    grep -oP '(?<=href=")[^"]*' "$html_file" 2>/dev/null | while read -r link; do
+    # Extract all href links, remove duplicates (macOS compatible)
+    grep -o 'href="[^"]*"' "$html_file" 2>/dev/null | sed 's/href="//;s/"$//' | while read -r link; do
         # Skip empty links, anchors, mailto, tel, javascript
         if [ -z "$link" ] || [[ "$link" =~ ^# ]] || [[ "$link" =~ ^mailto: ]] || [[ "$link" =~ ^tel: ]] || [[ "$link" =~ ^javascript: ]]; then
             continue
@@ -82,14 +82,14 @@ extract_links() {
 extract_images() {
     local html_file="$1"
     
-    # Extract src from img tags
-    grep -oP '(?<=src=")[^"]*' "$html_file" 2>/dev/null | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
+    # Extract src from img tags (macOS compatible)
+    grep -o 'src="[^"]*"' "$html_file" 2>/dev/null | sed 's/src="//;s/"$//' | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
     
-    # Extract srcset attributes
-    grep -oP '(?<=srcset=")[^"]*' "$html_file" 2>/dev/null | tr ',' '\n' | awk '{print $1}' | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
+    # Extract srcset attributes (macOS compatible)
+    grep -o 'srcset="[^"]*"' "$html_file" 2>/dev/null | sed 's/srcset="//;s/"$//' | tr ',' '\n' | awk '{print $1}' | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
     
-    # Extract from picture source tags
-    grep -oP '(?<=<source[^>]*src=")[^"]*' "$html_file" 2>/dev/null | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
+    # Extract from picture source tags (simplified for macOS)
+    grep -o '<source[^>]*' "$html_file" 2>/dev/null | grep -o 'src="[^"]*"' | sed 's/src="//;s/"$//' | grep -iE '\.(jpg|jpeg|png|gif|svg|webp|bmp|ico)(\?|$)' || true
 }
 
 # Prompt for URL
@@ -107,13 +107,16 @@ fi
 
 # Extract domain and create folder structure
 DOMAIN=$(extract_domain "$START_URL")
-LEGACY_DIR="$(cd "$(dirname "$0")" && cd ../../ && pwd)/legacy"
+LEGACY_DIR="../legacy"
 OUTPUT_DIR="${LEGACY_DIR}/${DOMAIN}"
 
 echo ""
 echo -e "${GREEN}Domain extracted: ${DOMAIN}${NC}"
 echo -e "${GREEN}Output directory: ${OUTPUT_DIR}${NC}"
 echo ""
+
+# Create legacy directory if it doesn't exist
+mkdir -p "$LEGACY_DIR"
 
 # Create output directory
 mkdir -p "$OUTPUT_DIR"
@@ -140,6 +143,7 @@ page_count=0
 
 # Process URLs from queue
 while [ -s "$QUEUE_FILE" ]; do
+
     # Get next URL from queue
     CURRENT_URL=$(head -n 1 "$QUEUE_FILE")
     
@@ -209,10 +213,14 @@ if [ -f "$IMAGE_LIST" ] && [ -s "$IMAGE_LIST" ]; then
     # Create assets directory
     ASSETS_DIR="${OUTPUT_DIR}/assets"
     mkdir -p "$ASSETS_DIR"
+
+    # Remove duplicates from image list
+    sort -u "$IMAGE_LIST" -o "$IMAGE_LIST"
     
     # Process images
     image_count=0
     sort -u "$IMAGE_LIST" | while read -r img_url; do
+    
         # Skip empty lines
         [ -z "$img_url" ] && continue
         
@@ -227,13 +235,20 @@ if [ -f "$IMAGE_LIST" ] && [ -s "$IMAGE_LIST" ]; then
         
         # Create unique filename if it already exists
         output_img="${ASSETS_DIR}/${img_filename}"
+
+        # Skip if file already exists
         if [ -f "$output_img" ]; then
-            # Add hash to make unique
-            hash=$(echo "$img_url" | md5 | cut -c1-8)
-            name="${img_filename%.*}"
-            ext="${img_filename##*.}"
-            output_img="${ASSETS_DIR}/${name}_${hash}.${ext}"
+            echo -e "${YELLOW}    ⊘ Already exists, skipping${NC}"
+            continue
         fi
+        
+        # if [ -f "$output_img" ]; then
+        #     # Add hash to make unique (macOS uses md5 not md5sum)
+        #     hash=$(echo -n "$img_url" | md5 | cut -c1-8)
+        #     name="${img_filename%.*}"
+        #     ext="${img_filename##*.}"
+        #     output_img="${ASSETS_DIR}/${name}_${hash}.${ext}"
+        # fi
         
         ((image_count++))
         echo -e "${BLUE}[$image_count] Downloading:${NC} $img_filename"
@@ -241,6 +256,7 @@ if [ -f "$IMAGE_LIST" ] && [ -s "$IMAGE_LIST" ]; then
         # Download image
         if curl -L -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
              -s -o "$output_img" "$img_url" 2>/dev/null; then
+
             # Verify it's actually an image (has content)
             if [ -s "$output_img" ]; then
                 echo -e "${GREEN}    ✓ Saved${NC}"

@@ -1,0 +1,92 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description = 'Bizot Paysagistes - Expert en aménagement paysager depuis plus de 40 ans en Île-de-France',
+  keywords = 'paysagiste, entretien jardin, aménagement paysager, espaces verts, Essonne, Île-de-France',
+  ogImage = 'https://www.bizot-paysagistes.com/assets/thumbnail.png'
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Bizot Paysagistes">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={Astro.url}>
+  <meta property="og:image" content={ogImage}>
+  
+  <title>{title}</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href={`${baseUrl}/assets/logo-bizot-paysagistes.png`}>
+  
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <style is:global>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Hero background pattern */
+    .hero-pattern {
+      background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    /* Filter button active state */
+    .filter-btn.active {
+      background-color: #386D56;
+      color: white;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-textColor bg-bgColor">
+  
+  <slot />
+
+  <!-- Alpine.js -->
+  <script is:inline defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- AOS JavaScript -->
+  <script is:inline src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script is:inline>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  </script>
+
+</body>
+</html>

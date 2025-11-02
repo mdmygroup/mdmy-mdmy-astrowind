@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const currentPath = '/contact';
+---
+
+<BaseLayout 
+  title="Contact - Bizot Paysagistes | Devis Gratuit Paysagiste"
+  description="Contactez Bizot Paysagistes pour votre projet d'aménagement paysager en Île-de-France. Devis gratuit et personnalisé. Intervention en Essonne, Hauts-de-Seine, Yvelines et Paris."
+  keywords="contact paysagiste, devis paysagiste gratuit, aménagement paysager Essonne, paysagiste Île-de-France, demande devis jardin"
+  ogImage="/assets/thumbnail.png"
+>
+  <Header currentPath={currentPath} />
+  
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-brandLight/30 to-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <div class="inline-block bg-brandDark/10 text-brandDark px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          📞 Réponse Sous 24h
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-textColor leading-tight mb-6">
+          Contactez-Nous pour Votre <span class="text-brand">Projet</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+          Demandez votre devis gratuit et personnalisé. Notre équipe vous répond rapidement 
+          pour étudier ensemble votre projet paysager.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Contact Form - 3 columns -->
+        <div class="lg:col-span-3" data-aos="fade-right">
+          <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+            <h2 class="text-3xl font-bold text-textColor mb-6">Demande de Devis</h2>
+            <p class="text-gray-600 mb-8">
+              Remplissez le formulaire ci-dessous, nous vous recontacterons sous <strong class="text-brandDark">24 heures</strong> 
+              pour échanger sur votre projet.
+            </p>
+            
+            <form class="space-y-6" id="contact-form">
+              <!-- Name & Email -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-semibold text-textColor mb-2">
+                    Nom complet *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                    placeholder="Jean Dupont"
+                  >
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-semibold text-textColor mb-2">
+                    Email *
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                    placeholder="jean.dupont@email.com"
+                  >
+                </div>
+              </div>
+              
+              <!-- Phone & City -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="phone" class="block text-sm font-semibold text-textColor mb-2">
+                    Téléphone *
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                    placeholder="06 12 34 56 78"
+                  >
+                </div>
+                <div>
+                  <label for="city" class="block text-sm font-semibold text-textColor mb-2">
+                    Ville *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="city" 
+                    name="city" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                    placeholder="Massy, Versailles..."
+                  >
+                </div>
+              </div>
+              
+              <!-- Client Type -->
+              <div>
+                <label for="client-type" class="block text-sm font-semibold text-textColor mb-2">
+                  Vous êtes *
+                </label>
+                <select 
+                  id="client-type" 
+                  name="client-type" 
+                  required
+                  class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                >
+                  <option value="">Sélectionnez...</option>
+                  <option value="particulier">Un Particulier</option>
+                  <option value="entreprise">Une Entreprise</option>
+                  <option value="copropriete">Une Copropriété</option>
+                  <option value="collectivite">Une Collectivité</option>
+                </select>
+              </div>
+              
+              <!-- Service Type -->
+              <div>
+                <label for="service" class="block text-sm font-semibold text-textColor mb-2">
+                  Type de projet *
+                </label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  required
+                  class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors"
+                >
+                  <option value="">Sélectionnez un service...</option>
+                  <option value="conception">Conception & Création</option>
+                  <option value="entretien">Entretien d'Espaces Verts</option>
+                  <option value="elagage">Élagage & Soins aux Arbres</option>
+                  <option value="conseil">Conseil & Étude</option>
+                  <option value="autre">Autre / Ne sait pas</option>
+                </select>
+              </div>
+              
+              <!-- Message -->
+              <div>
+                <label for="message" class="block text-sm font-semibold text-textColor mb-2">
+                  Décrivez votre projet *
+                </label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="6" 
+                  required
+                  class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-brand focus:outline-none transition-colors resize-none"
+                  placeholder="Décrivez votre projet : surface, type d'aménagement souhaité, budget estimé, délais..."
+                ></textarea>
+              </div>
+              
+              <!-- RGPD Consent -->
+              <div class="flex items-start gap-3">
+                <input 
+                  type="checkbox" 
+                  id="consent" 
+                  name="consent" 
+                  required
+                  class="mt-1 w-5 h-5 text-brand border-gray-300 rounded focus:ring-brand"
+                >
+                <label for="consent" class="text-sm text-gray-600">
+                  J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. 
+                  <a href="#" class="text-brand hover:underline">Politique de confidentialité</a>
+                </label>
+              </div>
+              
+              <!-- Submit Button -->
+              <button 
+                type="submit" 
+                class="w-full bg-brandDark text-white px-8 py-4 rounded-xl hover:bg-brand transition-all shadow-lg hover:shadow-xl font-semibold text-lg"
+              >
+                Envoyer ma Demande
+              </button>
+              
+              <p class="text-sm text-gray-500 text-center">
+                * Champs obligatoires • Réponse sous 24h ouvrées
+              </p>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Contact Info Sidebar - 2 columns -->
+        <div class="lg:col-span-2 space-y-6" data-aos="fade-left">
+          <!-- Contact Cards -->
+          <div class="bg-gradient-to-br from-brand to-brandDark text-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">Coordonnées</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  📞
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Téléphone</div>
+                  <a href="tel:+33123456789" class="text-brandLight hover:text-white transition-colors">
+                    01 23 45 67 89
+                  </a>
+                  <div class="text-sm text-brandLight mt-1">Lun-Ven : 8h-18h</div>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  ✉️
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Email</div>
+                  <a href="mailto:contact@bizot-paysagistes.com" class="text-brandLight hover:text-white transition-colors break-all">
+                    contact@bizot-paysagistes.com
+                  </a>
+                  <div class="text-sm text-brandLight mt-1">Réponse sous 24h</div>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  📍
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Zone d'intervention</div>
+                  <div class="text-brandLight">
+                    Essonne (91)<br>
+                    Hauts-de-Seine (92)<br>
+                    Yvelines (78)<br>
+                    Paris (75)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Urgency Card -->
+          <div class="bg-accent/10 border-2 border-accent/30 p-6 rounded-xl">
+            <div class="text-2xl mb-3">🚨</div>
+            <h4 class="text-xl font-bold text-textColor mb-2">Urgence ?</h4>
+            <p class="text-gray-600 mb-4 text-sm">
+              Pour toute intervention urgente (arbre dangereux, élagage de sécurité), contactez-nous directement par téléphone.
+            </p>
+            <a href="tel:+33123456789" class="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-all font-semibold">
+              Appel d'Urgence
+            </a>
+          </div>
+          
+          <!-- Trust Indicators -->
+          <div class="bg-brandLight/30 p-6 rounded-xl">
+            <h4 class="text-lg font-bold text-textColor mb-4">Pourquoi nous choisir ?</h4>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-brand font-bold">✓</span>
+                <span>Devis gratuit et sans engagement</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand font-bold">✓</span>
+                <span>Plus de 40 ans d'expérience</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand font-bold">✓</span>
+                <span>Certifications Qualipaysage & CS</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand font-bold">✓</span>
+                <span>Assurance décennale</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand font-bold">✓</span>
+                <span>Note moyenne 4.9/5 (127 avis)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-textColor mb-6">
+          Notre Zone d'Intervention
+        </h2>
+        <p class="text-lg text-gray-600">
+          Nous intervenons dans toute l'Île-de-France, principalement en Essonne, Hauts-de-Seine, Yvelines et Paris
+        </p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-200" style="height: 500px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.14347250556!2d2.1534!3d48.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDQyJzAwLjAiTiAywrAwOScxMi4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-textColor mb-6">
+          Questions Fréquentes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Les réponses aux questions les plus courantes sur nos services
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-lg font-bold text-textColor mb-3">💰 Les devis sont-ils gratuits ?</h3>
+          <p class="text-gray-600">
+            Oui, tous nos devis sont entièrement gratuits et sans engagement. Nous nous déplaçons 
+            pour étudier votre projet et vous proposer une solution personnalisée adaptée à votre budget.
+          </p>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-lg font-bold text-textColor mb-3">⏱️ Quels sont vos délais d'intervention ?</h3>
+          <p class="text-gray-600">
+            Les délais varient selon la nature et l'ampleur du projet. Pour l'entretien courant, 
+            nous intervenons généralement sous 1 à 2 semaines. Pour les urgences (élagage de sécurité), 
+            nous pouvons intervenir sous 48h.
+          </p>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-lg font-bold text-textColor mb-3">📍 Intervenez-vous dans ma ville ?</h3>
+          <p class="text-gray-600">
+            Nous intervenons principalement en Essonne (91), Hauts-de-Seine (92), Yvelines (78) et à Paris. 
+            N'hésitez pas à nous contacter pour vérifier si nous couvrons votre secteur.
+          </p>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-lg font-bold text-textColor mb-3">🏆 Êtes-vous certifiés et assurés ?</h3>
+          <p class="text-gray-600">
+            Oui, nous disposons des certifications Qualipaysage et CS Taille et Soins aux Arbres. 
+            Nous sommes également couverts par une assurance décennale pour garantir la qualité 
+            et la pérennité de nos travaux.
+          </p>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-lg font-bold text-textColor mb-3">💳 Quels sont vos modes de paiement ?</h3>
+          <p class="text-gray-600">
+            Nous acceptons les paiements par chèque, virement bancaire et espèces. Pour les particuliers, 
+            nous proposons également des facilités de paiement en plusieurs fois pour les projets importants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script is:inline>
+    // Form Submission Handler (placeholder)
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Merci pour votre demande ! Nous vous recontacterons sous 24 heures.\n\n(Note : Ce formulaire est un exemple. Il faudra le connecter à un backend pour un vrai envoi.)');
+        });
+      }
+    });
+  </script>
+</BaseLayout>

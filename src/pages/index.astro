@@ -1,0 +1,650 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout 
+  title="Bizot Paysagistes - Expert Paysagiste Essonne & Île-de-France | Aménagement & Entretien Jardins"
+  description="Bizot Paysagistes - Plus de 40 ans d'expertise en aménagement paysager, entretien de jardins et espaces verts en Île-de-France. Services pour particuliers, entreprises et copropriétés."
+  keywords="paysagiste, entretien jardin, aménagement paysager, espaces verts, Essonne, Île-de-France, paysagiste Paris, jardinage professionnel"
+>
+  <Header />
+  
+  <!-- Hero Section -->
+  <section id="accueil" class="relative pt-32 pb-24 md:pt-40 md:pb-32 hero-pattern">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Hero Content -->
+        <div data-aos="fade-up">
+          <div class="inline-block bg-brandDark/10 text-brandDark px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            ✨ Plus de 40 ans d'expertise
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-textColor leading-tight mb-6">
+            Votre Expert en 
+            <span class="text-brand">Aménagement Paysager</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            De la conception à l'entretien, nous créons et préservons des espaces verts exceptionnels en Île-de-France. 
+            Solutions sur-mesure pour particuliers, entreprises et copropriétés.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="bg-brandDark text-white px-8 py-4 rounded-xl hover:bg-brand transition-all shadow-lg hover:shadow-xl font-semibold text-center text-lg">
+              Demander un Devis Gratuit
+            </a>
+            <a href="/services" class="bg-white border-2 border-brandDark text-brandDark px-8 py-4 rounded-xl hover:bg-brand hover:text-white hover:border-brand transition-all font-semibold text-center text-lg">
+              Découvrir nos Services
+            </a>
+          </div>
+          
+          <!-- Trust Badges -->
+          <div class="mt-12 flex flex-wrap items-center gap-6">
+            <img src={`${baseUrl}/assets/logo-qualipaysage.png`}
+                 alt="Qualipaysage" 
+                 class="h-12 opacity-70 hover:opacity-100 transition-opacity"
+                 loading="lazy">
+            <img src={`${baseUrl}/assets/logo-les-entreprises-du-paysage.svg`}
+                 alt="Les Entreprises du Paysage" 
+                 class="h-12 opacity-70 hover:opacity-100 transition-opacity"
+                 loading="lazy">
+            <img src={`${baseUrl}/assets/logo-qualicert.png`}
+                 alt="Qualicert" 
+                 class="h-12 opacity-70 hover:opacity-100 transition-opacity"
+                 loading="lazy">
+          </div>
+        </div>
+        
+        <!-- Hero Image Placeholder -->
+        <div class="relative" data-aos="fade-left" data-aos-delay="200">
+          <div class="aspect-square rounded-2xl bg-gradient-to-br from-brand/20 to-accent/20 shadow-2xl overflow-hidden">
+            <!-- Replace with actual image -->
+            <div class="w-full h-full flex items-center justify-center text-brand/30 text-6xl font-bold">
+              🌳
+            </div>
+          </div>
+          <!-- Floating Stats -->
+          <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl" data-aos="zoom-in" data-aos-delay="400">
+            <div class="text-3xl font-bold text-brand">
+              <span id="hero-years-count">0</span>+
+            </div>
+            <div class="text-sm text-gray-600 font-medium">Années d'Expertise</div>
+          </div>
+          <div class="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-xl" data-aos="zoom-in" data-aos-delay="600">
+            <div class="text-3xl font-bold text-accent">
+              <span id="hero-projects-count">0</span>+
+            </div>
+            <div class="text-sm text-gray-600 font-medium">Projets Réalisés</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Reviews Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="max-w-6xl mx-auto">
+        <!-- Google Rating Header -->
+        <div class="text-center mb-12" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center gap-3 mb-4">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+                 alt="Google" 
+                 class="h-8"
+                 loading="lazy">
+            <span class="text-2xl font-bold text-textColor">Avis</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <div class="flex gap-1">
+              <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-4xl font-bold text-textColor">4.9</span>
+          </div>
+          <p class="text-gray-600 font-medium">Basé sur <strong>127 avis</strong> Google</p>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Review 1 -->
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex gap-1 mb-3">
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Excellent travail pour l'aménagement de notre jardin. L'équipe est professionnelle, à l'écoute et respecte les délais. Je recommande vivement !"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                MC
+              </div>
+              <div>
+                <div class="font-semibold text-textColor">Marie Caron</div>
+                <div class="text-sm text-gray-500">Il y a 2 semaines</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex gap-1 mb-3">
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Service d'entretien impeccable pour notre copropriété depuis 3 ans. Toujours soigneux et ponctuels. Les espaces verts n'ont jamais été aussi beaux !"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                JD
+              </div>
+              <div>
+                <div class="font-semibold text-textColor">Jean Dubois</div>
+                <div class="text-sm text-gray-500">Il y a 1 mois</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex gap-1 mb-3">
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Prestation d'élagage réalisée avec grand soin. Conseils avisés et travail soigné. Une équipe de vrais experts qui maîtrise leur métier !"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                SL
+              </div>
+              <div>
+                <div class="font-semibold text-textColor">Sophie Laurent</div>
+                <div class="text-sm text-gray-500">Il y a 3 semaines</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA to see all reviews -->
+        <div class="text-center mt-10" data-aos="fade-up">
+          <a href="https://www.google.com/search?q=bizot+paysagistes" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-brand hover:text-emerald-600 font-semibold transition-colors">
+            <span>Voir tous les avis Google</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-5 lg:px-20">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-textColor mb-6">
+          Nos Services d'Excellence
+        </h2>
+        <p class="text-lg text-gray-600">
+          Des solutions complètes pour tous vos projets d'espaces verts, avec l'expertise d'artisans passionnés.
+        </p>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1: Conception -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-brand/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-3xl">🎨</span>
+          </div>
+          <h3 class="text-2xl font-bold text-textColor mb-4">Conception & Création</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Aménagement paysager sur-mesure : jardins, terrasses, espaces verts d'entreprises. 
+            Design harmonieux alliant esthétique et fonctionnalité.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Plans d'aménagement personnalisés</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Création de jardins & terrasses</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Plantations & végétalisation</span>
+            </li>
+          </ul>
+          <a href="/services#conception" class="inline-flex items-center text-brandDark font-semibold hover:text-green-700 transition-colors">
+            En savoir plus 
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 2: Entretien -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-3xl">🌿</span>
+          </div>
+          <h3 class="text-2xl font-bold text-textColor mb-4">Entretien d'Espaces Verts</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Maintenance régulière pour préserver la beauté de vos jardins. 
+            Contrats annuels adaptés aux particuliers, entreprises et copropriétés.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Tonte & taille de haies</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Désherbage & traitement</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Nettoyage & ramassage</span>
+            </li>
+          </ul>
+          <a href="/services#entretien" class="inline-flex items-center text-brandDark font-semibold hover:text-emerald-600 transition-colors">
+            En savoir plus 
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 3: Élagage -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-brand/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span class="text-3xl">🌲</span>
+          </div>
+          <h3 class="text-2xl font-bold text-textColor mb-4">Élagage & Soins aux Arbres</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Expertise certifiée en taille et soins des arbres. Interventions sécurisées pour la santé 
+            et la longévité de votre patrimoine arboré.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Taille raisonnée & sanitaire</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Abattage & dessouchage</span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <span class="text-brand mr-2">✓</span>
+              <span>Diagnostic phytosanitaire</span>
+            </li>
+          </ul>
+          <a href="/services#elagage" class="inline-flex items-center text-brandDark font-semibold hover:text-emerald-600 transition-colors">
+            En savoir plus 
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Clients Section -->
+  <section class="py-24 relative text-white overflow-hidden target-clients-hero" style={`background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), url('${baseUrl}/assets/picture-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;`}>
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="container mx-auto px-5 lg:px-20 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Des Solutions pour Tous vos Besoins
+        </h2>
+        <p class="text-lg text-emerald-50">
+          Que vous soyez particulier, entreprise ou copropriété, nous avons l'expertise pour répondre à vos attentes.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Particuliers -->
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-5xl mb-4">🏡</div>
+          <h3 class="text-2xl font-bold mb-4">Particuliers</h3>
+          <p class="text-emerald-50 leading-relaxed">
+            Transformez votre jardin en un véritable havre de paix. Du petit jardin urbain au grand parc, 
+            nous créons l'espace de vos rêves.
+          </p>
+        </div>
+        
+        <!-- Entreprises -->
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-5xl mb-4">🏢</div>
+          <h3 class="text-2xl font-bold mb-4">Entreprises</h3>
+          <p class="text-emerald-50 leading-relaxed">
+            Valorisez votre image avec des espaces verts professionnels et accueillants. 
+            Entretien régulier et aménagements sur-mesure.
+          </p>
+        </div>
+        
+        <!-- Copropriétés -->
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl mb-4">🏘️</div>
+          <h3 class="text-2xl font-bold mb-4">Copropriétés & Syndics</h3>
+          <p class="text-emerald-50 leading-relaxed">
+            Gestion complète des espaces communs. Contrats annuels flexibles avec interventions planifiées 
+            pour un cadre de vie agréable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Realisations Section -->
+  <section id="realisations" class="py-24 bg-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-textColor mb-6">
+          Nos Réalisations
+        </h2>
+        <p class="text-lg text-gray-600">
+          Découvrez quelques-uns de nos projets qui illustrent notre savoir-faire et notre engagement pour l'excellence.
+        </p>
+      </div>
+      
+      <!-- Portfolio Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="100">
+          <div class="aspect-square bg-gradient-to-br from-brand/20 to-green-200/20 flex items-center justify-center text-6xl">
+            🌳
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Jardin Contemporain</h4>
+              <p class="text-sm text-gray-200">Aménagement complet - Particulier</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="200">
+          <div class="aspect-square bg-gradient-to-br from-accent/20 to-orange-200/20 flex items-center justify-center text-6xl">
+            🏢
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Espaces Verts d'Entreprise</h4>
+              <p class="text-sm text-gray-200">Création & Entretien - Corporate</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="300">
+          <div class="aspect-square bg-gradient-to-br from-brand/20 to-green-200/20 flex items-center justify-center text-6xl">
+            🌿
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Résidence Privée</h4>
+              <p class="text-sm text-gray-200">Aménagement Paysager Premium</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="100">
+          <div class="aspect-square bg-gradient-to-br from-brand/20 to-green-200/20 flex items-center justify-center text-6xl">
+            🏘️
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Copropriété Résidentielle</h4>
+              <p class="text-sm text-gray-200">Entretien Annuel - 200 logements</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="200">
+          <div class="aspect-square bg-gradient-to-br from-accent/20 to-orange-200/20 flex items-center justify-center text-6xl">
+            🌲
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Élagage Patrimonial</h4>
+              <p class="text-sm text-gray-200">Soins aux arbres centenaires</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" data-aos="zoom-in" data-aos-delay="300">
+          <div class="aspect-square bg-gradient-to-br from-brand/20 to-green-200/20 flex items-center justify-center text-6xl">
+            🎨
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-textColor/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <div class="text-white">
+              <h4 class="text-xl font-bold mb-2">Terrasse Végétalisée</h4>
+              <p class="text-sm text-gray-200">Design Contemporain - Paris</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12" data-aos="fade-up">
+        <a href="/realisations" class="inline-block bg-brand text-white px-8 py-4 rounded-xl hover:bg-brandDark transition-all font-semibold text-lg">
+          Voir Plus de Projets
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Values Section -->
+  <section id="a-propos" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div data-aos="fade-right">
+          <div class="inline-block bg-brandDark/10 text-brandDark px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            Notre Histoire
+          </div>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-textColor mb-6">
+            Plus de 40 ans au Service de vos Espaces Verts
+          </h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Depuis sa création, <strong>Bizot Paysagistes</strong> accompagne particuliers, entreprises et copropriétés 
+            en Île-de-France dans la conception, la réalisation et l'entretien de leurs espaces verts.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Notre expertise reconnue, nos certifications professionnelles et notre passion pour le végétal 
+            font de nous un partenaire de confiance pour tous vos projets paysagers.
+          </p>
+          
+          <!-- Values -->
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                <span class="text-2xl">💚</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-textColor text-lg mb-1">Expertise & Savoir-faire</h4>
+                <p class="text-gray-600">40 ans d'expérience et certifications professionnelles reconnues</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                <span class="text-2xl">🤝</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-textColor text-lg mb-1">Écoute & Proximité</h4>
+                <p class="text-gray-600">Un accompagnement personnalisé du projet à la réalisation</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                <span class="text-2xl">🌱</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-textColor text-lg mb-1">Engagement Environnemental</h4>
+                <p class="text-gray-600">Pratiques respectueuses de l'environnement et biodiversité</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Image & Certifications -->
+        <div class="relative" data-aos="fade-left">
+          <div class="aspect-square rounded-2xl bg-gradient-to-br from-brand/20 to-green-200/20 shadow-xl overflow-hidden">
+            <div class="w-full h-full flex items-center justify-center text-brand/30 text-6xl font-bold">
+              🌿
+            </div>
+          </div>
+          
+          <!-- Certification Badge -->
+          <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full" data-aos="zoom-in" data-aos-delay="200">
+            <div class="text-center">
+              <img src={`${baseUrl}/assets/logo-certificat-de-specialisation-taille-et-soins-aux-arbres.png`}
+                   alt="Certificat Taille et Soins aux Arbres" 
+                   class="h-16 mx-auto mb-3 opacity-80"
+                   loading="lazy">
+              <p class="text-sm font-medium text-gray-700">Certifié Taille & Soins aux Arbres</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone d'intervention -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-textColor mb-6">
+          Notre Zone d'Intervention
+        </h2>
+        <p class="text-lg text-gray-600">
+          Nous intervenons dans toute l'<strong>Île-de-France</strong>, principalement en <strong>Essonne (91)</strong>, 
+          <strong>Hauts-de-Seine (92)</strong>, <strong>Yvelines (78)</strong> et à <strong>Paris</strong>.
+        </p>
+      </div>
+      
+      <div class="bg-gradient-to-r from-brand/10 to-accent/10 rounded-2xl p-12 text-center" data-aos="zoom-in">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-3xl mb-3">📍</div>
+            <div class="font-bold text-textColor text-lg">Essonne (91)</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-3">📍</div>
+            <div class="font-bold text-textColor text-lg">Hauts-de-Seine (92)</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-3">📍</div>
+            <div class="font-bold text-textColor text-lg">Yvelines (78)</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-3">📍</div>
+            <div class="font-bold text-textColor text-lg">Paris</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="container mx-auto px-5 lg:px-20">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h3 class="text-2xl md:text-3xl font-bold text-textColor mb-4">
+          Restez Informé de nos Actualités
+        </h3>
+        <p class="text-gray-600 mb-8">
+          Conseils jardinage, tendances paysagères et offres exclusives directement dans votre boîte mail.
+        </p>
+        <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+          <input type="email" name="newsletter-email" placeholder="Votre adresse email" required
+                 class="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all text-textColor">
+          <button type="submit" 
+                  class="bg-accent text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition-all font-semibold whitespace-nowrap">
+            S'inscrire
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  
+  <style is:global>
+    /* Responsive background fixes for mobile devices */
+    @media (max-width: 767px) {
+      .target-clients-hero {
+        background-attachment: scroll !important;
+        background-position: center !important;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    // Counter Animation Function
+    function animateCount(id, end, duration) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      
+      let start = 0;
+      const startTime = performance.now();
+      
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.floor(progress * end);
+        el.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+    
+    // Trigger counter animations when hero section is visible
+    document.addEventListener('DOMContentLoaded', function() {
+      let hasAnimatedHero = false;
+      
+      function checkHeroVisibility() {
+        const heroSection = document.querySelector('.hero-pattern');
+        if (!heroSection) return;
+        
+        const rect = heroSection.getBoundingClientRect();
+        
+        if (!hasAnimatedHero && rect.top < window.innerHeight && rect.bottom > 0) {
+          hasAnimatedHero = true;
+          animateCount('hero-years-count', 40, 2000);
+          animateCount('hero-projects-count', 1000, 2500);
+        }
+      }
+      
+      window.addEventListener('scroll', checkHeroVisibility);
+      checkHeroVisibility(); // Check on page load
+    });
+  </script>
+</BaseLayout>

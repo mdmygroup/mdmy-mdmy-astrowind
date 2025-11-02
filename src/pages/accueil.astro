@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="MDMY Group" description="">
+  <Header />
+  
+  <main class="pt-0">
+    
+    <!-- Hero Section -->
+    <section 
+      class="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+      style="background-image: url('/assets/blurry_banner1-1.jpg');"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/30"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-4 md:px-16 text-center text-white">
+        <h1 
+          class="text-4xl md:text-6xl font-bold mb-6 font-poppins"
+          data-aos="fade-up"
+        >
+          Donnez vie à votre présence en ligne
+        </h1>
+        
+        <p 
+          class="text-lg md:text-xl max-w-3xl mx-auto mb-12 font-poppins"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Un site web performant, c'est un investissement pour votre croissance. Nous développons des sites internet et des applications web innovantes pour aider les TPE/PME à maximiser leur impact digital.
+        </p>
+        
+        <div 
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <a 
+            href="/services"
+            class="px-8 py-3 bg-white text-mdmy-dark font-manrope font-medium rounded-full hover:bg-gray-100 transition text-base"
+          >
+            Nos Services
+          </a>
+          <a 
+            href="/contact"
+            class="px-8 py-3 bg-transparent border-2 border-white text-white font-manrope font-medium rounded-full hover:bg-white/10 transition text-lg"
+          >
+            Nous Contacter
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Votre site web Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 md:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div 
+            class="relative h-96 md:h-full"
+            data-aos="fade-right"
+          >
+            <img 
+              src="/assets/unsplash-image-LSvnvfHPtzQ.jpg"
+              alt="Votre site web, notre priorité"
+              class="w-full h-full object-cover rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          
+          <!-- Content -->
+          <div data-aos="fade-left">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center md:text-left font-poppins">
+              Votre site web, notre priorité.
+            </h2>
+            <p class="text-base text-gray-700 text-justify font-poppins leading-relaxed">
+              Chez MDMY, nous concevons des sites web sur mesure qui reflètent l'identité unique de votre entreprise. Que vous souhaitiez créer un nouveau site ou moderniser votre plateforme existante, notre équipe d'experts est à votre disposition pour transformer votre vision en une réalité numérique performante, aligné sur vos objectifs et les attentes de vos clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Nos Services Section -->
+    <section class="relative py-20 min-h-96">
+      <!-- Background Image -->
+      <div 
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('/assets/charlesdeluvio-Lks7vei-eAg-unsplash-min.jpg');"
+      ></div>
+      
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-4 md:px-16">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center text-white mb-8 font-poppins"
+          data-aos="fade-up"
+        >
+          Nos services
+        </h2>
+        
+        <p 
+          class="text-base text-center text-white max-w-3xl mx-auto mb-12 font-poppins"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Un site web performant, c'est un investissement pour votre croissance.​ Notre équipe d'experts est à votre disposition pour vous accompagner dans la conception et la réalisation de vos projets.
+        </p>
+        
+        <div 
+          class="text-center mb-12"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <a 
+            href="/services"
+            class="inline-block px-8 py-3 bg-white text-mdmy-dark font-manrope font-medium rounded-full hover:bg-gray-100 transition"
+          >
+            En savoir plus
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <!-- Service 1 -->
+          <div 
+            class="text-white"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="text-xl font-bold mb-3 font-manrope">TRANSFORMEZ VOTRE SITE</h4>
+            <p class="text-sm font-poppins">
+              Engagez et convertissez avec des sites web sur mesure qui incarnent votre marque.
+            </p>
+          </div>
+          
+          <!-- Service 2 -->
+          <div 
+            class="text-white"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h4 class="text-xl font-bold mb-3 font-manrope">DIGITALISEZ-VOUS</h4>
+            <p class="text-sm font-poppins">
+              Amplifiez votre présence en ligne avec notre expertise en SEO et en médias sociaux​.
+            </p>
+          </div>
+          
+          <!-- Service 3 -->
+          <div 
+            class="text-white"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <h4 class="text-xl font-bold mb-3 font-manrope">DOMINEZ VOTRE MARCHÉ</h4>
+            <p class="text-sm font-poppins">
+              Dépassez vos concurrents avec des stratégies marketing ciblées et innovantes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pourquoi choisir MDMY Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-16">
+        <h2 
+          class="text-3xl md:text-4xl font-bold text-center mb-12 font-poppins"
+          data-aos="fade-up"
+        >
+          Pourquoi choisir MDMY ?
+        </h2>
+        
+        <!-- Carousel Container -->
+        <div 
+          class="relative"
+          x-data="{
+            currentSlide: 0,
+            slides: 4,
+            autoplay: true,
+            autoplayInterval: null,
+            init() {
+              if (this.autoplay) {
+                this.startAutoplay();
+              }
+            },
+            startAutoplay() {
+              this.autoplayInterval = setInterval(() => {
+                this.next();
+              }, 5000);
+            },
+            stopAutoplay() {
+              clearInterval(this.autoplayInterval);
+            },
+            next() {
+              this.currentSlide = (this.currentSlide + 1) % this.slides;
+            },
+            prev() {
+              this.currentSlide = (this.currentSlide - 1 + this.slides) % this.slides;
+            }
+          }"
+        >
+          <!-- Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Card 1: CLÉ-EN-MAIN -->
+            <div 
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="aspect-[3/2] overflow-hidden">
+                <img 
+                  src="/assets/ales-nesetril-Im7lZjxeLhg-unsplash.jpg"
+                  alt="CLÉ-EN-MAIN"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 font-manrope text-center">CLÉ-EN-MAIN​</h3>
+                <p class="text-sm text-gray-700 text-center font-poppins">
+                  Nous assurons un accompagnement complet de l'audit à la gestion quotidienne pour votre sérénité totale​
+                </p>
+              </div>
+            </div>
+            
+            <!-- Card 2: EXPERTISE -->
+            <div 
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="aspect-[3/2] overflow-hidden">
+                <img 
+                  src="/assets/sean-pollock-PhYq704ffdA-unsplash.jpg"
+                  alt="EXPERTISE"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 font-manrope text-center">EXPERTISE​</h3>
+                <p class="text-sm text-gray-700 text-center font-poppins">
+                  Nous construisons des solutions sur mesure pour TPE et artisans, avec une expertise qui marque la différence​
+                </p>
+              </div>
+            </div>
+            
+            <!-- Card 3: TECHNOLOGIE -->
+            <div 
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="aspect-[3/2] overflow-hidden">
+                <img 
+                  src="/assets/marc-olivier-jodoin-NqOInJ-ttqM-unsplash.jpg"
+                  alt="TECHNOLOGIE"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 font-manrope text-center">TECHNOLOGIE​</h3>
+                <p class="text-sm text-gray-700 text-center font-poppins">
+                  Nous utilisons les dernières technologies et innovations pour vous fournir des services avant-gardistes​
+                </p>
+              </div>
+            </div>
+            
+            <!-- Card 4: RÉSULTATS GARANTIS -->
+            <div 
+              class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="aspect-[3/2] overflow-hidden">
+                <img 
+                  src="/assets/nigel-tadyanehondo-3k5cAmxjXl4-unsplash.jpg"
+                  alt="RÉSULTATS GARANTIS"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 font-manrope text-center">RÉSULTATS GARANTIS​</h3>
+                <p class="text-sm text-gray-700 text-center font-poppins">
+                  Maximisez votre retour sur investissement avec des résultats tangibles et mesurables
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <Footer />
+</BaseLayout>

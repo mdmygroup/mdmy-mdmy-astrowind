@@ -6,5 +6,5 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'static',
   site: 'https://mdmygroup.github.io',
-  base: '/mdmy-bp-astrowind',
+  base: '/mdmy-mdmy-astrowind',
 });

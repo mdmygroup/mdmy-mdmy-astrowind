@@ -238,78 +238,78 @@ echo -e "${GREEN}======================================${NC}"
 echo ""
 
 # Now download images
-# if [ -f "$IMAGE_LIST" ] && [ -s "$IMAGE_LIST" ]; then
-#     echo -e "${YELLOW}Starting to download images...${NC}"
-#     echo ""
+if [ -f "$IMAGE_LIST" ] && [ -s "$IMAGE_LIST" ]; then
+    echo -e "${YELLOW}Starting to download images...${NC}"
+    echo ""
     
-#     # Create assets directory
-#     ASSETS_DIR="${OUTPUT_DIR}/assets"
-#     mkdir -p "$ASSETS_DIR"
+    # Create assets directory
+    ASSETS_DIR="${OUTPUT_DIR}/assets"
+    mkdir -p "$ASSETS_DIR"
 
-#     # Remove duplicates from image list
-#     sort -u "$IMAGE_LIST" -o "$IMAGE_LIST"
+    # Remove duplicates from image list
+    sort -u "$IMAGE_LIST" -o "$IMAGE_LIST"
     
-#     # Process images
-#     image_count=0
-#     sort -u "$IMAGE_LIST" | while read -r img_url; do
+    # Process images
+    image_count=0
+    sort -u "$IMAGE_LIST" | while read -r img_url; do
     
-#         # Skip empty lines
-#         [ -z "$img_url" ] && continue
+        # Skip empty lines
+        [ -z "$img_url" ] && continue
         
-#         # Normalize image URL
-#         img_url=$(normalize_url "$img_url" "$BASE_URL")
+        # Normalize image URL
+        img_url=$(normalize_url "$img_url" "$BASE_URL")
         
-#         # Extract filename from URL
-#         img_filename=$(basename "$img_url" | sed 's/[?#].*//')
+        # Extract filename from URL
+        img_filename=$(basename "$img_url" | sed 's/[?#].*//')
         
-#         # Skip if no filename
-#         [ -z "$img_filename" ] && continue
+        # Skip if no filename
+        [ -z "$img_filename" ] && continue
         
-#         # Create unique filename if it already exists
-#         output_img="${ASSETS_DIR}/${img_filename}"
+        # Create unique filename if it already exists
+        output_img="${ASSETS_DIR}/${img_filename}"
 
-#         # Skip if file already exists
-#         if [ -f "$output_img" ]; then
-#             echo -e "${YELLOW}    ⊘ Already exists, skipping${NC}"
-#             continue
-#         fi
+        # Skip if file already exists
+        if [ -f "$output_img" ]; then
+            echo -e "${YELLOW}    ⊘ Already exists, skipping${NC}"
+            continue
+        fi
         
-#         # if [ -f "$output_img" ]; then
-#         #     # Add hash to make unique (macOS uses md5 not md5sum)
-#         #     hash=$(echo -n "$img_url" | md5 | cut -c1-8)
-#         #     name="${img_filename%.*}"
-#         #     ext="${img_filename##*.}"
-#         #     output_img="${ASSETS_DIR}/${name}_${hash}.${ext}"
-#         # fi
+        # if [ -f "$output_img" ]; then
+        #     # Add hash to make unique (macOS uses md5 not md5sum)
+        #     hash=$(echo -n "$img_url" | md5 | cut -c1-8)
+        #     name="${img_filename%.*}"
+        #     ext="${img_filename##*.}"
+        #     output_img="${ASSETS_DIR}/${name}_${hash}.${ext}"
+        # fi
         
-#         ((image_count++))
-#         echo -e "${BLUE}[$image_count] Downloading:${NC} $img_filename"
+        ((image_count++))
+        echo -e "${BLUE}[$image_count] Downloading:${NC} $img_filename"
         
-#         # Download image
-#         if curl -L -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
-#              -s -o "$output_img" "$img_url" 2>/dev/null; then
+        # Download image
+        if curl -L -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
+             -s -o "$output_img" "$img_url" 2>/dev/null; then
 
-#             # Verify it's actually an image (has content)
-#             if [ -s "$output_img" ]; then
-#                 echo -e "${GREEN}    ✓ Saved${NC}"
-#             else
-#                 rm -f "$output_img"
-#                 echo -e "${RED}    ✗ Empty file${NC}"
-#             fi
-#         else
-#             echo -e "${RED}    ✗ Failed${NC}"
-#         fi
+            # Verify it's actually an image (has content)
+            if [ -s "$output_img" ]; then
+                echo -e "${GREEN}    ✓ Saved${NC}"
+            else
+                rm -f "$output_img"
+                echo -e "${RED}    ✗ Empty file${NC}"
+            fi
+        else
+            echo -e "${RED}    ✗ Failed${NC}"
+        fi
         
-#         sleep 0.3
-#     done
+        sleep 0.3
+    done
     
-#     echo ""
-#     echo -e "${GREEN}======================================${NC}"
-#     echo -e "${GREEN}Image download complete!${NC}"
-#     echo -e "${GREEN}======================================${NC}"
-# else
-#     echo -e "${YELLOW}No images found to download.${NC}"
-# fi
+    echo ""
+    echo -e "${GREEN}======================================${NC}"
+    echo -e "${GREEN}Image download complete!${NC}"
+    echo -e "${GREEN}======================================${NC}"
+else
+    echo -e "${YELLOW}No images found to download.${NC}"
+fi
 
 # Clean up tracking files
 rm -f "$VISITED_FILE" "$QUEUE_FILE" "$IMAGE_LIST"
